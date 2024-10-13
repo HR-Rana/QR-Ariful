@@ -5,10 +5,7 @@ const dbUrl = 'mongodb+srv://12345:8jjOpOF2Pkwbk6X5@cluster1.lqd6sol.mongodb.net
 
 
 
-mongoose.connect(dbUrl, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-})
+mongoose.connect(dbUrl)
 .then(()=>{
     console.log('Connected to MongoDB');
 }).then((err)=>{console.log(err)})
