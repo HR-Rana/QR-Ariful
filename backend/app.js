@@ -11,8 +11,10 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
-
-
+app.use("/static", express.static(path.join(__dirname, 'frontend')));
+app.use("/", (req, res) => {
+    res.sendFile(path.join(__dirname, '../frontend/index.html'));
+})
 
 
 app.use("", router)
